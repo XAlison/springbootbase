@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <title>基础平台</title>
+    <link   href="../plugin/element-ui/lib/theme-chalk/index.css" rel="stylesheet"/>
+    <script src="../plugin/vue/vue-2.5.13.min.js"></script>
+    <script src="../plugin/element-ui/lib/index.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2 th:text="${msg}"></h2>
+
+    <div id="app">
+        <el-button @click="visible = true">Button</el-button>
+        <el-dialog :visible.sync="visible" title="Hello world">
+            <p>Try Element</p>
+        </el-dialog>
+    </div>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: function() {
+            return { visible: false }
+        }
+    })
+</script>
+</body>
+</html>
